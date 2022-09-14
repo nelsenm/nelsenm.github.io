@@ -723,6 +723,12 @@
       <!--===== Contact =====-->
       <section class="contact section" id="contact">
         <h2 data-heading="Get in touch" class="section__title">Contact Me</h2>
+        <!-- Alert -->
+        <div class="alert success my-alert d-none">
+          <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+          <strong>Success!</strong> Your message has been submitted.
+        </div>
+        <!-- End Alert -->
         <div class="contact__container container grid">
           <!-- Contact Content 1 -->
           <div class="contact__content">
@@ -752,33 +758,38 @@
           </div>
           <!-- Contact Content 2 -->
           <div class="contact__content">
-            <form action="" class="contact__form">
+            <form action="" class="contact__form" name="contact-form" autocomplete="off">
               <!-- Username -->
               <div class="input__container">
-                <input type="text" class="input" />
-                <label for="">Username</label>
-                <span>Username</span>
+                <input type="text" class="input" name="Nama" id="Nama" autofocus />
+                <label for="Nama">Name</label>
+                <span>Name</span>
               </div>
               <!-- Email -->
               <div class="input__container">
-                <input type="email" class="input" />
-                <label for="">Email</label>
+                <input type="email" class="input" name="Email" id="Email" />
+                <label for="Email">Email</label>
                 <span>Email</span>
               </div>
               <!-- Phone -->
               <div class="input__container">
-                <input type="tel" class="input" />
-                <label for="">Phone</label>
+                <input type="tel" class="input" name="Nomor" id="Nomor" pattern="(\+62|62|0)8[1-9][0-9]{6,9}$" />
+                <label for="Nomor">Phone</label>
                 <span>Phone</span>
               </div>
               <!-- Message -->
               <div class="input__container textarea">
-                <textarea name="" id="" class="input"></textarea>
-                <label for="">Message</label>
+                <textarea name="Pesan" id="Pesan" class="input"></textarea>
+                <label for="Pesan">Message</label>
                 <span>Message</span>
               </div>
               <!-- Submit -->
-              <button type="submit" class="button"><i class="uil uil-navigator button__icon"></i> Send Message</button>
+              <button type="submit" class="button btn-kirim"><i class="uil uil-navigator button__icon"></i> Send Message</button>
+              <!-- Submit Loading -->
+              <button class="bttn btn-loading d-none" type="button " disabled>
+                <div class="loading" role="status"></div>
+                <span>Loading ...</span>
+              </button>
             </form>
           </div>
         </div>

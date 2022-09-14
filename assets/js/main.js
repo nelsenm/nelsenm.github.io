@@ -149,3 +149,27 @@ function scrollUp() {
   else scrollUp.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollUp);
+/* ============== Alert ============== */
+/* ============= Contact Form ================ */
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyTwjPYKd1iCzT3uLvhtd4py8XNRlvyJC3dotuW5ZkRhEDtS6yvrsNuWt2lofb899Xh/exec';
+const form = document.forms['contact-form'];
+const btnKirim = document.querySelector('.btn-kirim');
+const btnLoading = document.querySelector('.btn-loading');
+const myAlert = document.querySelector('.my-alert');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  //  Ketika tombol submit diklik
+  btnLoading.classList.toggle('d-none');
+  btnKirim.classList.toggle('d-none');
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then((response) => {
+      // tampilkan tombol kirim, hilangkan tombol loading
+      console.log('Success!', response);
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+      myAlert.classList.toggle('d-none');
+      form.reset();
+    })
+    .catch((error) => console.error('Error!', error.message));
+});
