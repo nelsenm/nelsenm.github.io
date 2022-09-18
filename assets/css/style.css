@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -24,6 +24,7 @@
   --h1-font-size: 2.25rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
+  --h4-font-size: 1rem;
   --normal-font-size: 1rem;
   --small-font-size: 0.875rem;
   --smaller-font-size: 0.813rem;
@@ -1010,32 +1011,54 @@ textarea.input {
   bottom: 2rem;
 }
 /* =============== Alert Box ================ */
-.alert {
-  padding: 20px;
-  text-align: center;
-  background-color: var(--box-color);
-  color: var(--text-color);
-  opacity: 1;
-  transition: 0.6s;
-  margin-bottom: 15px;
+.toast-container {
+  position: relative;
+  bottom: -10px;
+  width: 54%;
+  height: auto;
+  max-width: 720px;
+  display: flex;
+  align-items: center;
+  background: var(--skin-color);
+  color: #fff;
+  margin-top: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+  left: 25%;
+  transition: all 1800ms ease;
 }
-.alert.success {
-  background-color: var(--skin-color);
+.toast-container.active {
+  bottom: 20px;
 }
-.closebtn {
-  margin-left: 15px;
-  color: var(--text-color);
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.closebtn:hover {
-  color: var(--box-color);
+.toast-container span {
+  line-height: 1.5;
+  font-size: 14px;
 }
 
+.toast-container .text-content {
+  padding: 0 24px;
+  padding-right: 40px;
+  font-weight: var(--h3-font-size);
+}
+.toast-container p.author-name {
+  color: var(--text-color);
+  margin-top: 2px;
+  font-size: 14px;
+}
+.toast-container .close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.image {
+  font-size: 2rem;
+}
+.icon-hati {
+  color: red;
+}
 /* =============== Submit Loading =========== */
 .bttn {
   display: inline-flex;
@@ -1269,6 +1292,14 @@ textarea.input {
   }
   .portfolio__popup-close {
     top: 0.5rem;
+  }
+  .skills__active .skills__arrow {
+    transform: rotate(0deg);
+    transition: 0.3s;
+  }
+  .skills__arrow {
+    margin-left: auto;
+    transform: rotate(-90deg);
   }
 }
 

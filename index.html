@@ -17,6 +17,16 @@
     <!--========== MAIN CSS ==========-->
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!--========== Font Awesome ==========-->
+    <link
+      rel="stylesheet"
+      S
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <title>Nelsen | Portfolio</title>
   </head>
 
@@ -750,36 +760,30 @@
               </div>
             </div>
           </div>
-          <!-- Alert -->
-          <div class="alert success my-alert d-none">
-            <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
-            <strong>Success!</strong> Your message has been submitted.
-          </div>
-          <!-- End Alert -->
           <!-- Contact Content 2 -->
           <div class="contact__content">
             <form action="" class="contact__form" name="contact-form" autocomplete="off">
               <!-- Username -->
               <div class="input__container">
-                <input type="text" class="input" name="Nama" id="Nama" />
+                <input type="text" class="input" name="Nama" id="Nama" required />
                 <label for="Nama">Name</label>
                 <span>Name</span>
               </div>
               <!-- Email -->
               <div class="input__container">
-                <input type="email" class="input" name="Email" id="Email" />
+                <input type="email" class="input" name="Email" id="Email" required />
                 <label for="Email">Email</label>
                 <span>Email</span>
               </div>
               <!-- Phone -->
               <div class="input__container">
-                <input type="tel" class="input" name="Nomor" id="Nomor" pattern="(\+62|62|0)8[1-9][0-9]{6,9}$" />
+                <input type="tel" class="input" name="Nomor" id="Nomor" pattern="(\+62|62|0)8[1-9][0-9]{6,9}$" required />
                 <label for="Nomor">Phone</label>
                 <span>Phone</span>
               </div>
               <!-- Message -->
               <div class="input__container textarea">
-                <textarea name="Pesan" id="Pesan" class="input"></textarea>
+                <textarea name="Pesan" id="Pesan" class="input" required></textarea>
                 <label for="Pesan">Message</label>
                 <span>Message</span>
               </div>
@@ -794,6 +798,20 @@
           </div>
         </div>
       </section>
+      <!-- Alert -->
+      <div class="toast-container my-alert d-none">
+        <div class="image">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="text-content">
+          <span> <strong>Success!</strong> Your message has been submitted.</span>
+          <p class="author-name">Thank you <i class="fa-solid fa-heart icon-hati"></i></p>
+        </div>
+        <div class="close" id="alert-close" onclick="this.parentElement.style.display='none';">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <!-- End Alert -->
       <!--===== FOOTER =====-->
       <footer class="footer">
         <div class="footer__bg">

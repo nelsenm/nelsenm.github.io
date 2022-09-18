@@ -150,6 +150,7 @@ function scrollUp() {
 }
 window.addEventListener('scroll', scrollUp);
 /* ============== Alert ============== */
+
 /* ============= Contact Form ================ */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyTwjPYKd1iCzT3uLvhtd4py8XNRlvyJC3dotuW5ZkRhEDtS6yvrsNuWt2lofb899Xh/exec';
 const form = document.forms['contact-form'];
@@ -173,3 +174,4 @@ form.addEventListener('submit', (e) => {
     })
     .catch((error) => console.error('Error!', error.message));
 });
+// ============= Alert =================
